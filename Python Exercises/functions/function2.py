@@ -2,8 +2,11 @@
 # rectangle area=length*width
 # If no shape is supplied then it should take triangle as a default shape
 
-def calculate_area(b,h):
-    area=(1/2)*b*h
-    return area
-print(calculate_area(5,6))
-print(calculate_area(7,8))
+def calculate_area(length, width, shape_type="triangle"):
+    if shape_type == "rectangle":
+        return length * width
+    elif shape_type == "triangle":
+        return 0.5 * length * width
+    else:
+        raise ValueError("Invalid shape type. Choose 'triangle' or 'rectangle'.")
+
